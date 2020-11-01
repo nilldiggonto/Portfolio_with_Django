@@ -25,7 +25,7 @@
                       <hr>
                       <p>
                           {{blog.body|truncatechars:50}}
-                          <span><a href="#" class="btn btn-sm btn-outline-danger">More info</a></span>
+                          <span><a href="{% url 'detail' blog.id %}" class="btn btn-sm btn-outline-danger">More info</a></span>
                       </p>
                   </div>
                   <div class="card-footer">
