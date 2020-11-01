@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<section class="jumbotron text-center">
+    <div class="container">
+      <h1>Blog Page</h1>
+      <!-- <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p> -->
+ 
+    </div>
+  </section>
+
+
+  <div class="container mb-4">
+      <div class="row">
+          {% for blog in blogs %}
+          <!-- loop here-->
+          <div class="col-md-8 offset-md-2 mb-2">
+              <div class="card">
+                  <div class="card-header">
+                      <h4>{{blog.title}}</h4>
+                  </div>
+                  <div class="card-body">
+                      <img src="{{blog.image.url}}" alt="" class="card-img-top">
+                      <hr>
+                      <p>
+                          {{blog.body|truncatechars:50}}
+                          <span><a href="#" class="btn btn-sm btn-outline-danger">More info</a></span>
+                      </p>
+                  </div>
+                  <div class="card-footer">
+                      <p>Published on {{blog.data_polish }}</p>
+                  </div>
+              </div>
+          </div>
+         
+          <!--Endloop-->
+          {% endfor %}
+      </div>
+  </div>
+
+{% endblock %}
