@@ -21,5 +21,6 @@ import info.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',info.views.home,name='homepage'),
+    path('skill/',info.views.all_skills,name='skillpage'),
 
 ]+static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
